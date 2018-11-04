@@ -1,0 +1,207 @@
+/* CSS harjoituksen tyylit + kommentteja, jos niihin on tarve... */
+html {
+  font-family: sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.info-box {
+  width: 800px;
+  height: 1000px;
+  margin: 0 auto;
+}
+
+.info-box ul {
+  padding-left: 0;
+  margin-top: 0;
+}
+.info-box li {
+  float: left;
+  list-style-type: none; /* ottaa bulletit pois*/
+  width: 200px;
+}
+
+.info-box li a {
+  display: inline-block; /* the items to sit in a line but still be stylable */
+  text-decoration: none;
+  width: 100%;
+  line-height: 3;
+  background-color: #FBE8A6;
+  color: black;
+  text-align: center;
+}
+.info-box li a:focus, .info-box li a:hover { /*the tabs to look different when they are focused/hovered */
+  background-color: #F4976C;
+  color: white;
+}
+
+.info-box li a.active {  /*the same styling on a tab when a class of "active" is present on it. */
+  background-color: #303C6C;
+  color: white;
+}
+
+.info-box .panels {
+  height: 352px;
+  position: relative;
+  clear: both;
+}
+.info-box article {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 450px;
+  padding: 10px;
+  color: white;
+  background-color: #F4976C;
+  width: 100%;
+}
+
+.info-box .active-panel {
+  z-index: 1;  /* aktiivinen sijoittuu stackin päällimmäiseksi */
+}
+
+/* Bordered form */
+form {
+    background-color: #ff8080;
+    width: 50%;
+    margin: 60px auto;
+
+}
+
+/* Full-width inputs */
+input[type=text], input[type=password] {
+    width: 80%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 15px;
+}
+
+/* Set a style for all buttons */
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 7px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 50%;
+    border-radius: 15px;
+}
+
+/* Add a hover effect for buttons */
+button:hover {
+    opacity: 0.8;
+}
+
+/* Add padding to containers */
+.container {
+    padding: 6px;
+}
+
+/* The "Forgot password" text*/
+span.psw {
+    float: left;
+    padding-top: 16px;
+}
+
+/* Change styles for span button on extra small screens */
+@media screen and (max-width: 300px) {
+    span.psw {
+        display: block;
+        float: none;
+    }
+}
+
+.flex-container {  /* boxi */
+  display:flex;  /* tää tekee sen flex-ominaisuuden */
+  flex-wrap: wrap;
+  flex-direction: row; /*stacks the flex items horizontally (from left to right)*/
+  background-color: #D2FDFF;
+
+  position: relative;
+  padding: .5em;
+  overflow: auto;
+  border-radius: 5px;
+
+  /*justify-content: flex-start; */
+  justify-content: space-around; /* laittaa harmaat boxit keskelle */
+  align-content: flex-start;
+  align-items: stretch;
+}
+
+.flex-container > div {
+ background-color:#B4DFE5; /*  */
+ width: 100px;
+ margin: 10px;
+ text-align: left;
+ line-height: 20px;
+ font-size: 14px;
+ color: #303C6C;
+ border-radius: 5px;
+}
+/* UUSI versio flexboxin tyyleistä */
+.flex-container {
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+    align-items: flex-start;
+}
+
+ .flex-items-default {
+    width: 300px;
+    height: 250px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 0;
+}
+
+ .flex-item-1 {
+    width: 300px;
+    height: 300px;
+    flex-grow: <property unused>
+    flex-shrink: <property unused>
+    flex-basis: <property unused>
+}
+
+ .flex-item-2 {
+    width: 300px;
+    height: 500px;
+    flex-grow: <property unused>
+    flex-shrink: <property unused>
+    flex-basis: <property unused>
+}
+
+ .flex-item-3 {
+    width: 200px;
+    height: 250px;
+    flex-grow: <property unused>
+    flex-shrink: <property unused>
+    flex-basis: <property unused>
+}
+
+ .flex-item-4 {
+    width: 200px;
+    height: 200px;
+    flex-grow: <property unused>
+    flex-shrink: <property unused>
+    flex-basis: <property unused>
+}
+
+ .flex-item-5 {
+    width: 300px;
+    height: 450px;
+    flex-grow: <property unused>
+    flex-shrink: <property unused>
+    flex-basis: <property unused>
+}

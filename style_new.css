@@ -1,0 +1,236 @@
+/* CSS harjoituksen tyylit + kommentteja, jos niihin on tarve... */
+html {
+  font-family: sans-serif;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  /* margin: 10px; */
+  color: #374046;
+  background-color: #374046;
+  /*font-size: 0.8em; */
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+.info-box {
+  width: 800px;
+  height: 500px;
+  margin: 0 auto; /*centering the box */
+}
+.info-box ul {
+  padding-left: 0;
+  margin-top: 0;
+}
+.info-box li {
+  float: left;
+  list-style-type: none; /* ottaa bulletit pois*/
+  width: 200px; /* tot width 800/4 */
+}
+.info-box li a {
+  display: inline-block; /* the items to sit in a line but still be stylable */
+  text-decoration: none; /* no underlining in tab texts */
+  width: 100%;
+  line-height: 3;
+  background-color: #FBE8A6;
+  color: black;
+  text-align: center;
+}
+.info-box li a:focus, .info-box li a:hover { /*the tabs to look different when they are focused/hovered */
+  background-color: #FBE8A6;
+  color: white;
+}
+.info-box li a.active {  /*the styling on a tab when a class of "active" is present on it. */
+  background-color: #303C6C;
+  color: white;
+}
+.info-box .panels {
+  height: 450px; /* =koko ruutu-tabien korkeus */
+  position: relative;
+  clear: both;
+}
+.info-box article {
+  position: absolute; /* depending on parent element */
+  top: 0;
+  left: 0;
+  height: 450px;
+  padding: 10px;
+  color: white; /* ks. teksti 4.tabissa */
+  background-color: #F4976C;
+  width: 100%;
+}
+.info-box .active-panel {
+  z-index: 1;  /* aktiivinen sijoittuu stackin päällimmäiseksi */
+}
+article {
+  overflow-y: auto;
+}
+
+/* Ykkössivun tyylit*/
+/* Bordered form */
+.login {
+    background-color: #9c9;
+    width: 50%;
+    margin: 60px auto; /* horiz.centering */
+    padding: 10px 0;
+}
+
+/* Full-width inputs */
+input[type=text], input[type=password] {
+    width: 80%;
+    padding: 12px 20px;
+    margin: 10px 20px; /*top+bottom, left+right*/
+    /*display: inline-block; */
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+/* Set a style for all buttons, on tab1 and tab4 */
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 7px 20px;
+    margin: 8px 20px;
+    border: none;
+    cursor: pointer;
+    width: 50%;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.5); /*black with 0.5 opacity*/
+}
+
+/* Add a hover effect for buttons */
+button:hover {
+    opacity: 0.8;
+}
+/* The "Forgot password" text*/
+.psw {
+    /*float: left; */
+    padding-top: 16px;
+    margin: 4px 20px; /*top+bottom, left+right*/
+}
+
+
+/* kakkossivun tyylit:*/
+.grid {
+  display: grid;
+  grid-gap: 5px; /* spacing between grid items */
+  grid-template-columns: repeat(auto-fill, minmax(150px,1fr));
+  /*  repeat: create multiple similar columns
+  auto-fill=create as many columns as will fit in the available grid-width
+  minmax(250px,1fr)=the columns having min-width 250px and flexible max-width, being the same for each column */
+  grid-auto-rows: 20px;
+  color: black;
+
+}
+
+.item {
+  background-color: #ffffff;
+  font-size: 12px;
+}
+.photothumb{
+  width: 100%;
+}
+.title {
+  padding: 5px;
+  font-size: 14px;
+}
+.title h3{
+  font-size: 1.1em;
+  color: #ffffff;
+}
+.project .title{
+  background-color: #303C6C;
+}
+.blog .title{
+  background-color: #AB987A;
+}
+.photo .title{
+  background-color: #FBE8A6;
+}
+.desc{
+  padding: 10px 10px 5px 10px;
+}
+.desc img{
+  width: 50%;
+  margin: 0 3px 3px 0;
+  float: left;
+}
+.desc p{
+  /*margin-bottom: 5px; */
+}
+
+/*kolmossivun tyylit */
+caption{
+    margin: 13px;
+    font-weight: bold;
+}
+
+
+#cars_input {
+float:left;
+width:200px;
+background:#9c9;
+}
+#cars_input label{
+  margin-left: 20px;
+}
+#cars_input button{
+  width: 80%;
+}
+
+#cars_table {
+float:right;
+width:550px;
+background:#AB987A;
+table-layout: fixed;
+border-collapse: collapse;
+border: 3px solid #303C6C;
+
+}
+thead td {
+  font-weight: bold;
+}
+thead td:nth-child(1) {
+  width: 15%;
+}
+thead td:nth-child(2) {
+  width: 35%;
+}
+thead td:nth-child(3) {
+  width: 35%;
+}
+thead td:nth-child(4) {
+  width: 15%;
+}
+
+td {
+  padding: 10px;
+  text-align: center;
+
+}
+tbody tr:nth-child(odd) {
+  background-color: #303C6C;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #AB987A;
+}
+
+/*nelossivun tyylit */
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+}
+
+/* Change styles for span button on extra small screens */
+@media screen and (max-width: 300px) {
+    span.psw {
+        display: block;
+        float: none;
+    }
+}

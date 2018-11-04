@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>CSS harjoitus</title>
+  <link rel="stylesheet" href="style_new.css" type="text/css">
+
+</head>
+<body>
+  <section class="info-box">
+    <ul>
+      <li><a href="#" class="active">Login</a></li> <!--this is the navbar here -->
+      <li><a href="#">Notes</a></li>
+      <li><a href="#">Objects</a></li>
+      <li><a href="#">ToBeDone</a></li>
+    </ul>
+
+    <div class="panels">
+
+      <article class="active-panel">
+
+
+          <div class="login">
+          <input type="text" placeholder="username" name="uname" required>
+          <input type="password" placeholder="password" name="psw" required>
+        </br>
+        <div class="psw">Forgot <a href="empty.html">password?</a></div>
+
+          <button type="submit">Login</button>
+        </div>
+
+      </article>
+
+
+      <!--TAB 2 -->
+      <article>
+        <div class="grid">
+          <div class="item blog">
+            <div class="content">
+              <div class="title">
+                <h3>1: ToBeDone</h3>
+              </div>
+              <div class="desc">
+                <p>Learn JS objects.</br>
+                  Do Wordpress assignment </br>
+                  Study HTML DOM </br>
+                  Plan the UI for Luomu -project
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="item photo">
+            <div class="content">
+              <div class="title">
+                <h3>2: This week's menu</h3>
+              </div>
+              <img class="photothumb" src="meal.jpg">
+              <div class="desc">
+                <p>Mon: Fish soup</br>
+                  Tue: Greek salad</br>
+                  Wed: Mashed potatoes & meatballs</br>
+                  Thu: Pea soup & pancakes</br>
+                  Fri: Lasagne
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="item photo">
+            <div class="content">
+              <div class="title">
+                <h3>3: Shopping list</h3>
+              </div>
+              <img class="photothumb" src="verkko.png">
+              <div class="desc">
+                <p>Needed for next week:</p>
+                <ul>
+                  <li>Jogging shoes</li>
+                  <li>Wetsuit</li>
+                  <li>Energy gels</li>
+                </ul>
+              
+              </div>
+            </div>
+          </div>
+
+          <div class="item project">
+            <div class="content">
+              <div class="title">
+                <h3>4: Project</h3>
+              </div>
+              <div class="desc">
+                <img src="verkko.png">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lectus libero, volutpat at eros quis, venenatis tempus neque. Nulla vel faucibus orci, nec convallis ligula. Quisque maximus gravida orci, in lacinia mauris pretium nec. </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="item project">
+            <div class="content">
+              <div class="title">
+                <h3>5: Training plan</h3>
+              </div>
+              <div class="desc">
+                <img src="swim.jpg">
+                <p>Tarzan drill: perfect for open-water swimming.
+                  Practice the freestyle stroke, but with one twist: your head remains entirely above the water, looking forward in a fixed position.
+                  The Tarzan drill helps to strengthen the kick, as well as the neck and back muscles needed to lift the head to sight buoys and other swimmers. Use this drill only for short distances in combination with regular freestyle sets.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="item blog">
+            <div class="content">
+              <div class="title">
+                <h3>6: Blog post</h3>
+              </div>
+              <div class="desc">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dictum non orci ut dignissim. Fusce fermentum felis aliquam, mattis nibh ut, faucibus leo.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="item blog">
+            <div class="content">
+              <div class="title">
+                <h3>7: Upcoming birthdays</h3>
+              </div>
+              <div class="desc">
+                <p>26.5. Kummitäti</br>
+                4.6. Pekka</p>
+              </div>
+            </div>
+          </div>
+
+        </article>
+
+
+
+        <!--TAB 3 -->
+        <article>
+          <div id="cars_input">
+          <div class="user_input">
+            <label for ="licence-plate">Licence plate:</label><br>
+            <input type="text" id="licence-plate"></input><br>
+            <label for ="maker">Maker:</label><br>
+            <input type="text" id="maker"></input><br>
+            <label for ="model">Model:</label><br>
+            <input type="text" id="model"></input><br>
+            <label for ="price">Price:</label><br>
+            <input type="text" id="price"></input><br>
+
+            <button type="button" onclick="createNewCar()">Add this car to my garage</button>
+          </div>
+          </div>
+          <div id="cars_table">
+            <table id="car-table">
+              <caption>My garage contains:</caption>
+              <thead>
+                <tr>
+                  <td>Licence</td>  <!--individual cells -->
+                  <td>Maker</td>
+                  <td>Model</td>
+                  <td>Price</td>
+                </tr>
+              </thead>
+              <tbody id="car-table-body">
+
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+
+        <!--TAB 4 -->
+        <article>
+          <p>This page is under construction: see the Men at Work.</p>
+
+          <img src="men_at_work.jpg">
+        </article>
+      </div>
+    </section>
+
+    <script>
+
+    var tabs = document.querySelectorAll('.info-box li a');
+    var panels = document.querySelectorAll('.info-box article');
+
+    for(i = 0; i < tabs.length; i++) {
+      var tab = tabs[i];
+      setTabHandler(tab, i); /* sets up the functionality that occurs when each tab is clicked on
+      function is passed a reference to the particular tab it is being run for, and an index number i that indentifies the tab's position in the tabs array */
+    }
+
+    function setTabHandler(tab, tabPos) {
+      tab.onclick = function() {  //the tab has an onclick event handler set on it
+        for(i = 0; i < tabs.length; i++) {  // loop is used to cycle through all the tabs and remove any classes that are present on them
+          tabs[i].className = '';
+        }
+
+        tab.className = 'active';  // class of active is set on the tab that was clicked on
+
+        for(i = 0; i < panels.length; i++) {  //A for loop is used to cycle through all the panels and remove any classes that are present on them
+          panels[i].className = '';
+        }
+
+        panels[tabPos].className = 'active-panel';  //'active-panel'-class is set on the panel that corresponds to the tab that was clicked on
+      }
+    }
+    // kakkossivun scripti:
+    function resizeGridItem(item){ //resizes items individually
+      grid = document.getElementsByClassName("grid")[0];
+      rowHeight = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-auto-rows'));
+      rowGap = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-row-gap'));
+      rowSpan = Math.ceil((item.querySelector('.content').getBoundingClientRect().height+rowGap)/(rowHeight+rowGap));
+      item.style.gridRowEnd = "span "+rowSpan;
+    }
+    function resizeAllGridItems(){
+      allItems = document.getElementsByClassName("item");
+      for(x=0;x<allItems.length;x++){
+        resizeGridItem(allItems[x]);
+      }
+    }
+    function resizeInstance(instance){
+      item = instance.elements[0];
+      resizeGridItem(item);
+    }
+
+    window.onload = resizeAllGridItems();
+    window.addEventListener("resize", resizeAllGridItems);
+
+    allItems = document.getElementsByClassName("item");
+    for(x=0;x<allItems.length;x++){
+      imagesLoaded( allItems[x], resizeInstance);
+    }
+/*kolmossivun scripti,
+lisättävien rivien määrää pitää vielä rajoittaa 8:aan - TOBEDONE */
+
+function createNewCar() {
+    var table = document.getElementById("car-table-body");
+    var row = table.insertRow(0);
+    var cell1 = row.insertCell(0);
+    var cell2 = row.insertCell(1);
+    var cell3 = row.insertCell(2);
+    var cell4 = row.insertCell(3);
+    cell1.innerHTML = document.getElementById("licence-plate").value;
+    cell2.innerHTML = document.getElementById("maker").value;
+    cell3.innerHTML = document.getElementById("model").value;
+    cell4.innerHTML = document.getElementById("price").value;
+
+}
+
+  </script>
+</body>
+</html>
